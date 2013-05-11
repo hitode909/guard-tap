@@ -23,7 +23,7 @@ module Guard
       if options[:command]
         "#{options[:command]} #{Shellwords.escape path} 2>&1"
       else
-        "#{Shellwords.escape file} 2>&1"
+        "#{Shellwords.escape path} 2>&1"
       end
     end
   end
