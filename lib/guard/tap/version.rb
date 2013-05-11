@@ -1,5 +1,5 @@
 module Guard
-  module Tap
-    VERSION = "0.0.1"
+  module TapVersion
+    VERSION = '1.0.0'
   end
 end

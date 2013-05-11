@@ -5,7 +5,7 @@ require 'guard/tap/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "guard-tap"
-  spec.version       = Guard::Tap::VERSION
+  spec.version       = Guard::TapVersion::VERSION
   spec.authors       = ["hitode909"]
   spec.email         = ["hitode909@gmail.com"]
   spec.description   = %q{Guard::Tap automatically run your tests using TAP(Test Anything Protocol).}
