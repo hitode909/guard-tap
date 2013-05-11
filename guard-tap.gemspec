@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Guard::Tap::VERSION
   spec.authors       = ["hitode909"]
   spec.email         = ["hitode909@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{Guard::Tap automatically run your tests using TAP(Test Anything Protocol).}
+  spec.summary       = %q{Guard gem for Test Anything Protocol)}
+  spec.homepage      = "http://github.com/hitode909/guard-tap"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
