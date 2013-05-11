@@ -17,8 +17,6 @@ module Guard
       }
     end
 
-    private
-
     def make_command path
       if options[:command]
         "#{options[:command]} #{Shellwords.escape path} 2>&1"
