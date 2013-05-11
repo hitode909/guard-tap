@@ -39,9 +39,12 @@ module Guard
           else
             notify_error "failed: #{title}"
           end
-        end
 
-        private
+          $?.success?
+        rescue SystemCallError
+          notify_error "failed: #{title}"
+          false
+        end
 
         def notify message, args = { }
           ::Guard::UI.info message
