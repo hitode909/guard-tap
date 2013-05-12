@@ -1,4 +1,4 @@
-# Guard::Tap
+# Guard::Tap [![Build Status](https://travis-ci.org/hitode909/guard-tap.png?branch=master)](https://travis-ci.org/hitode909/guard-tap)
 
 RSpec guard allows to automatically run TAP based test suites and print a report.
 
