@@ -16,6 +16,21 @@ describe Guard::Tap::Runner do
     it 'returns false when failed' do
       runner.run('undefined_method').should == false
     end
+
+    it 'handles ok' do
+      runner.should_not_receive(:notify_error)
+      runner.run('echo ok 1')
+    end
+
+    it 'handles not ok' do
+      runner.should_receive(:notify_error).with(/^not ok 1/)
+      runner.run('echo not ok 1')
+    end
+
+    it 'handles not ok (TODO)' do
+      runner.should_not_receive(:notify_error)
+      runner.run('echo not ok 1 # TODO')
+    end
   end
 
   describe '#notify' do
