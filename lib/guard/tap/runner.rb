@@ -25,7 +25,7 @@ module Guard
                 flush_error.call
               elsif line =~ /^not ok/
                 flush_error.call
-                now_error = true
+                now_error = (line =~ / # TODO/ ? false : true)
               end
               if now_error
                 error_message << line
