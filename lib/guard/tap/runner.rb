@@ -4,7 +4,7 @@ module Guard
       class << self
 
         def run command, title = command
-          notify "runnning: #{title}"
+          notify :info, "runnning: #{title}"
 
           now_error = false
           error_message = ''
@@ -16,7 +16,7 @@ module Guard
 
           IO.popen(command, "r+"){ |io|
             while line = io.gets
-              UI.info line
+              UI.debug line
               if line =~ /^ok/
                 now_error = false
                 flush_error.call
@@ -46,17 +46,17 @@ module Guard
           false
         end
 
-        def notify message, args = { }
-          ::Guard::UI.info message
+        def notify log_level, message, args = { }
+          ::Guard::UI.send log_level, message
           ::Guard::Notifier.notify message, args
         end
 
         def notify_success message
-          notify message, image: :success
+          notify :info, message, image: :success
         end
 
         def notify_error message
-          notify message, image: :failed
+          notify :error, message, image: :failed
         end
 
       end
