@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'guard/compat/test/helper'
 
 describe Guard::Tap::Runner do
 
@@ -39,7 +40,7 @@ describe Guard::Tap::Runner do
     end
 
     it 'calls UI and Notifier' do
-      Guard::UI.should_receive(:info).with('hi')
+      Guard::Compat::UI.should_receive(:info).with('hi')
       Guard::Notifier.should_receive(:notify).with('hi', foo: 'bar')
       runner.notify :info, 'hi', foo: 'bar'
     end

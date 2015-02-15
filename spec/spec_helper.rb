@@ -7,12 +7,12 @@ RSpec.configure do |config|
     ENV["GUARD_ENV"] = 'test'
     @project_path    = Pathname.new(File.expand_path('../../', __FILE__))
 
-    Guard::UI.stub(:info)
-    Guard::UI.stub(:debug)
-    Guard::UI.stub(:error)
-    Guard::UI.stub(:success)
-    Guard::UI.stub(:warning)
-    Guard::UI.stub(:notify)
+    Guard::Compat::UI.stub(:info)
+    Guard::Compat::UI.stub(:debug)
+    Guard::Compat::UI.stub(:error)
+    Guard::Compat::UI.stub(:success)
+    Guard::Compat::UI.stub(:warning)
+    Guard::Compat::UI.stub(:notify)
   end
 
   config.after(:each) do

@@ -1,9 +1,6 @@
 require "guard/tap/version"
 
-require 'guard'
-require 'guard/watcher'
 require 'guard/compat/plugin'
-
 require 'shellwords'
 
 module Guard
