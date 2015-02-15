@@ -29,7 +29,7 @@ describe Guard::Tap::Runner do
 
     it 'handles not ok (TODO)' do
       runner.should_not_receive(:notify_error)
-      runner.run('echo not ok 1 # TODO')
+      runner.run('echo not ok 1 \\# TODO')
     end
   end
 
