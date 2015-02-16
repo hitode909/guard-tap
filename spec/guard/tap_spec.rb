@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'guard/compat/test/helper'
 
 describe Guard::Tap do
 
@@ -39,7 +40,7 @@ describe Guard::Tap do
     end
 
     context 'with the :command option' do
-      let(:guard) { Guard::Tap.new(nil, :command => 'perl') }
+      let(:guard) { Guard::Tap.new(:command => 'perl') }
 
       it 'makes the command with specified command' do
         guard.make_command('test.pl').should == 'perl test.pl 2>&1'

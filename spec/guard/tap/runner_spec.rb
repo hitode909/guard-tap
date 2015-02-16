@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'guard/compat/test/helper'
 
 describe Guard::Tap::Runner do
 
@@ -29,7 +30,7 @@ describe Guard::Tap::Runner do
 
     it 'handles not ok (TODO)' do
       runner.should_not_receive(:notify_error)
-      runner.run('echo not ok 1 # TODO')
+      runner.run('echo not ok 1 \\# TODO')
     end
   end
 
@@ -39,7 +40,7 @@ describe Guard::Tap::Runner do
     end
 
     it 'calls UI and Notifier' do
-      Guard::UI.should_receive(:info).with('hi')
+      Guard::Compat::UI.should_receive(:info).with('hi')
       Guard::Notifier.should_receive(:notify).with('hi', foo: 'bar')
       runner.notify :info, 'hi', foo: 'bar'
     end

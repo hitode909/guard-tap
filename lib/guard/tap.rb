@@ -1,13 +1,10 @@
 require "guard/tap/version"
 
-require 'guard'
-require 'guard/guard'
-require 'guard/watcher'
-
+require 'guard/compat/plugin'
 require 'shellwords'
 
 module Guard
-  class Tap < Guard
+  class Tap < Plugin
 
     autoload :Runner, 'guard/tap/runner'
 

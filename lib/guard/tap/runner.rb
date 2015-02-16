@@ -16,7 +16,7 @@ module Guard
 
           IO.popen(command, "r+"){ |io|
             while line = io.gets
-              UI.debug line
+              ::Guard::Compat::UI.debug line
               if line =~ /^ok/
                 now_error = false
                 flush_error.call
@@ -47,7 +47,7 @@ module Guard
         end
 
         def notify log_level, message, args = { }
-          ::Guard::UI.send log_level, message
+          ::Guard::Compat::UI.send log_level, message
           ::Guard::Notifier.notify message, args
         end
 
